@@ -1,0 +1,6 @@
+{
+  "name": "Brand Visibility Auditor",
+  "description": "Analyze your company's search visibility, generate customer personas with long-tail prompts, and rate rankings across ChatGPT and Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
