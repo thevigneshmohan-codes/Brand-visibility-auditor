@@ -6,6 +6,30 @@ https://brand-visibility-auditor-130087021073.asia-southeast1.run.app
 
 ---
 
+## Screenshots
+
+### Landing Page
+
+![Landing Page](screenshots/landing-page.png)
+
+### Overview Dashboard
+
+![Overview Dashboard](screenshots/overview-page.png)
+
+### Personas
+
+![Personas](screenshots/personas.png)
+
+### Prompt Generation
+
+![Prompt Generation](screenshots/prompts.png)
+
+### Content Generation
+
+![Content Generation](screenshots/content-gen.png)
+
+---
+
 ## Overview
 
 Brand Visibility Auditor helps brands understand how visible they are across AI-powered search experiences such as ChatGPT, Gemini, and other Large Language Models (LLMs).
