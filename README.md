@@ -1,60 +1,20 @@
-**Prototype**
-   [https://brand-visibility-auditor-130087021073.asia-southeast1.run.app]
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-**Overview**
-Brand Visibility Auditor helps brands understand how visible they are across AI-powered search experiences such as ChatGPT, Gemini, and other large language models (LLMs).
+# Run and deploy your AI Studio app
 
-Consumer search behavior has changed. Increasingly, people use ChatGPT and other AI assistants during the discovery stage to find products, services, and recommendations, while relying on traditional search engines later in the evaluation and transactional stages. As AI-generated answers become a key source of brand discovery, organizations need a way to measure and improve their visibility within these platforms. Brand Visibility Auditor helps brands understand how often they appear in AI-generated responses and how they compare against competitors across leading LLMs.
+This contains everything you need to run your app locally.
 
-**Vision**
-Enable brands to measure and improve their visibiilty on AI powered search experience 
+View your app in AI Studio: https://ai.studio/apps/e03d60a7-9494-42af-9c2a-45fcd3f43285
 
-**Problem**
-Traditional SEO tools measure rankings on Google Search.
-They do not answer:
-   - Is my brand appearing in ChatGPT recommendations?
-   - How often am I mentioned versus competitors?
-   - Which prompts trigger my brand's visibility?
-   - Which content gaps are hurting my AI search presence?
+## Run Locally
 
-**Customer**
-   - Chief Marketing Officer (CMO)
-   - VP Marketing
-   - Head of Digital Marketing
-   
-**User**
-   - Digital Marketing Manager
-   - Content Strategist
-   - Marketing Agencies
-   
-**Current Key Features in MVP**
-   - AI Search Visibility Score
-   - LLM level visibility tracking
-        - ChatGPT
-        - Gemini
-   - Content generation
+**Prerequisites:**  Node.js
 
-**Roadmap**
-- MVP (current)
-   -  Landing page with CTA for website URL
-   -  Persona generation
-   -  Prompt generation
-   -  Scoring logic
-   -  LLM -  Gemini & ChatGPT (simulated)
-   -  EEAT based Content generation
-   -  New audit generation
--  V1
-   - Integrate LLM APIs through DataforSEO - ChatGpt and Gemini
-   - Prompt level analytics
-   - Persona level analytics
-   - Download Report as PDF
--  V2
-   - Integrate LLM APIs - Perplexity
-   - Prompt based content generation
-   - Trend analysis
--  V3
-   - Tactic recommendation
-   - Wordpress plugin for direct content placement
-   - Image generation for content
-   - 
 
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

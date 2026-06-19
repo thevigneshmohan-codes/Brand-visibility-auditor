@@ -167,7 +167,6 @@ export default function App() {
               <h1 className="text-xl font-bold tracking-tight font-display text-slate-900">
                 Brand Visibility Auditor
               </h1>
-              <p className="text-xs text-slate-500 font-medium">Search Generative Experience (SGE) Share of Voice Audit</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -208,16 +207,9 @@ export default function App() {
               className="max-w-2xl mx-auto mt-6"
             >
               <div className="text-center mb-10">
-                <div className="inline-flex items-center justify-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold mb-4">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Real-time AI Search Penetration Auditor</span>
-                </div>
                 <h2 className="text-4xl font-bold tracking-tight text-slate-900 font-display sm:text-5xl">
-                  Measure your search visibility across <span className="text-indigo-600">ChatGPT</span> &amp; <span className="text-indigo-600">Gemini</span> SGE
+                  Measure your <span className="text-indigo-600">LLM visibility</span> across ChatGPT &amp; Gemini
                 </h2>
-                <p className="mt-4 text-base text-slate-600 max-w-xl mx-auto">
-                  Paste your landing page URL. Our pipeline scrapes your offerings, maps out optimal ICP personas, prompts top LLM engines simultaneously, and calculates an actionable visibility rating.
-                </p>
               </div>
 
               {/* Form Input Card */}
@@ -250,7 +242,7 @@ export default function App() {
                     id="submit-generate-button"
                     onClick={() => handleGenerateReport(url)}
                     disabled={!url.trim()}
-                    className="w-full flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-indigo-600/10 transition duration-150 text-sm animate-pulse-slow"
+                    className="w-full flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 active:scale-[0.99] transition duration-150 text-sm cursor-pointer"
                   >
                     <span>Analyze Website Search Visibility</span>
                     <ArrowRight className="w-4 h-4" />
@@ -269,53 +261,6 @@ export default function App() {
                 )}
               </div>
 
-              {/* Quick Suggestion Chips */}
-              <div className="mt-8 text-center">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-3">Or click to run a fast demo</span>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  {QUICK_SUGGESTIONS.map((sug) => (
-                    <button
-                      key={sug.name}
-                      onClick={() => {
-                        selectSuggestion(sug);
-                        handleGenerateReport(sug.url, sug.desc);
-                      }}
-                      className="flex flex-col items-center justify-center p-3.5 bg-white border border-slate-200 hover:border-indigo-500 rounded-xl text-slate-800 hover:bg-slate-50 transition cursor-pointer text-center duration-150"
-                    >
-                      <span className="font-semibold text-sm text-indigo-600 flex items-center space-x-1 font-display">
-                        <span>{sug.name}</span>
-                        <ArrowUpRight className="w-3 h-3 text-slate-400" />
-                      </span>
-                      <span className="text-[10px] text-slate-400 text-center font-medium mt-1 inline-block truncate w-full">{sug.url}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Info Logic */}
-              <div className="mt-14 border-t border-slate-200 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div className="flex space-x-3">
-                  <div className="text-indigo-600 p-1 rounded-lg bg-indigo-50 h-fit mt-0.5"><Users className="w-5 h-5" /></div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-950 font-display">1. ICP Synthesis</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1 font-medium">Extracts target groups, business tags, and shapes three precise client profiles.</p>
-                  </div>
-                </div>
-                <div className="flex space-x-3">
-                  <div className="text-indigo-600 p-1 rounded-lg bg-indigo-50 h-fit mt-0.5"><Search className="w-5 h-5" /></div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-950 font-display">2. Querying prompts</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1 font-medium">Runs authentic long-tail search conversational queries representing your buyers.</p>
-                  </div>
-                </div>
-                <div className="flex space-x-3">
-                  <div className="text-indigo-600 p-1 rounded-lg bg-indigo-50 h-fit mt-0.5"><Award className="w-5 h-5" /></div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-950 font-display">3. Multi-Engine score</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1 font-medium">Scans citations lists and text positioning to mathematically determine your Share-of-Voice index.</p>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           )}
 
@@ -390,7 +335,7 @@ export default function App() {
                 <div>
                   <div className="flex items-center space-x-2 text-xs text-indigo-600 font-bold uppercase tracking-wider">
                     <Globe className="w-3.5 h-3.5" />
-                    <span>Live Audit for {report.targetUrl}</span>
+                    <span>Audit for {report.targetUrl}</span>
                   </div>
                   <h2 className="text-3xl font-extrabold tracking-tight font-display text-slate-900 mt-1 flex items-center space-x-3">
                     <span>{report.brandName}</span>
@@ -440,19 +385,19 @@ export default function App() {
                   onClick={() => setActiveTab('personas')}
                   className={`pb-3 text-sm font-semibold relative transition ${activeTab === 'personas' ? 'text-indigo-600 border-b-2 border-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'}`}
                 >
-                  Audited ICP Personas
+                  Personas
                 </button>
                 <button
                   onClick={() => setActiveTab('audits')}
                   className={`pb-3 text-sm font-semibold relative transition ${activeTab === 'audits' ? 'text-indigo-600 border-b-2 border-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'}`}
                 >
-                  SGE Query Playground
+                  Prompts
                 </button>
                 <button
                   onClick={() => setActiveTab('eeat')}
                   className={`pb-3 text-sm font-semibold relative transition ${activeTab === 'eeat' ? 'text-indigo-600 border-b-2 border-indigo-600 font-bold' : 'text-slate-500 hover:text-slate-800'}`}
                 >
-                  EEAT Remediation
+                  Content
                 </button>
               </div>
 
@@ -466,13 +411,13 @@ export default function App() {
                     {/* Visual bar split engine */}
                     <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                       <h3 className="text-base font-bold font-display text-slate-900 border-b border-slate-100 pb-3 block">
-                        Engine Performance Analysis
+                        LLM analysis
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
                         
                         {/* Gemini SGE Visibility Card */}
                         <div className="p-4 rounded-xl border border-indigo-100 bg-indigo-50/20 relative">
-                          <span className="text-[10px] uppercase tracking-wider font-extrabold text-indigo-600 block">Google Search (Gemini SGE)</span>
+                          <span className="text-[10px] uppercase tracking-wider font-extrabold text-indigo-600 block">Gemini</span>
                           <div className="flex items-baseline justify-between mt-1">
                             <span className="text-3xl font-black text-slate-900 tracking-tight font-display">{report.geminiVisibilityScore}%</span>
                             <span className={`text-[10px] font-bold px-2 py-0.5 border rounded-md uppercase ${getScoreColor(report.geminiVisibilityScore)}`}>
@@ -491,7 +436,7 @@ export default function App() {
 
                         {/* ChatGPT Search Visibility Card */}
                         <div className="p-4 rounded-xl border border-emerald-100 bg-emerald-50/10 relative">
-                          <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-600 block">OpenAI Search (ChatGPT GPTs)</span>
+                          <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-600 block">ChatGpt</span>
                           <div className="flex items-baseline justify-between mt-1">
                             <span className="text-3xl font-black text-slate-900 tracking-tight font-display">{report.chatgptVisibilityScore}%</span>
                             <span className={`text-[10px] font-bold px-2 py-0.5 border rounded-md uppercase ${getScoreColor(report.chatgptVisibilityScore)}`}>
@@ -504,7 +449,7 @@ export default function App() {
                             <div className={`h-full bg-emerald-500 transition-all duration-1000`} style={{ width: `${report.chatgptVisibilityScore}%` }}></div>
                           </div>
                           <p className="text-[11px] text-slate-500 leading-relaxed mt-3 font-medium">
-                            Calculates search coverage index for conversational prompts sent directly to ChatGPT.
+                            How often ChatGPT lists your products and embeds website citations in AI snippets.
                           </p>
                         </div>
 
@@ -674,22 +619,6 @@ export default function App() {
                         )}
                       </div>
                     </div>
-
-                    <div className="bg-slate-900 text-white rounded-2xl p-6 shadow-md relative overflow-hidden">
-                      <div className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 opacity-10 bg-white/20 w-32 h-32 rounded-full blur-xl"></div>
-                      <h4 className="text-sm font-extrabold tracking-widest text-indigo-400 uppercase">Share of Voice Index</h4>
-                      <p className="text-xs text-slate-350 leading-relaxed mt-2 font-medium">
-                        Increasing visibility indices from <strong>45% → 85%</strong> typically correlates with a <strong>3.2x increase</strong> in high-intent inbound pipeline leads.
-                      </p>
-                      
-                      <button
-                        onClick={() => setActiveTab('audits')}
-                        className="mt-4 inline-flex items-center space-x-1.5 text-xs font-bold text-indigo-300 hover:text-white transition group"
-                      >
-                        <span>Open Query Playground</span>
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
-                      </button>
-                    </div>
                   </div>
 
                 </div>
@@ -701,7 +630,7 @@ export default function App() {
                   <div className="max-w-2xl">
                     <h3 className="text-xl font-bold font-display text-slate-950">Synthesized ICP Persona Types</h3>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1 font-semibold">
-                      Based on your business offerings and scraper indices, these segment types represent your optimal target audience profiles performing conversational SGE/ChatGPT lookups.
+                      Based on your business offerings, these personas represent your intended customer profile
                     </p>
                   </div>
 
@@ -714,11 +643,10 @@ export default function App() {
                           <div>
                             <div className="flex items-center space-x-3 mb-4">
                               <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-indigo-700 flex items-center justify-center text-white font-bold text-sm">
-                                {per.name.split(' ').map(n=>n[0]).join('')}
+                                <Users className="w-5 h-5 text-white" />
                               </div>
                               <div>
                                 <h4 className="font-bold text-slate-900 font-display text-sm leading-tight">{per.name}</h4>
-                                <span className="text-[11px] font-bold text-slate-500 block truncate">{per.title}</span>
                               </div>
                             </div>
 
@@ -736,24 +664,6 @@ export default function App() {
                                 <p className="text-slate-700 font-medium leading-relaxed mt-0.5">{per.goal}</p>
                               </div>
                             </div>
-                          </div>
-
-                          <div className="mt-6 pt-4 border-t border-slate-100">
-                            <span className="font-bold text-slate-400 uppercase text-[9px] tracking-wider block mb-1">conversational Search Query</span>
-                            <div className="p-3 bg-slate-50 border border-slate-205 rounded-xl font-mono text-[11px] text-slate-700 relative italic leading-relaxed font-semibold">
-                              "{per.prompt}"
-                            </div>
-                            
-                            <button
-                              onClick={() => {
-                                setSelectedPersonaId(per.id);
-                                setActiveTab('audits');
-                              }}
-                              className="mt-4 flex items-center justify-center space-x-1 w-full py-2 bg-indigo-50 text-indigo-700 border border-indigo-100 text-xs font-bold rounded-xl hover:bg-indigo-100 transition"
-                            >
-                              <span>Audit Queries</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </button>
                           </div>
                         </div>
                       );
@@ -783,15 +693,11 @@ export default function App() {
                             <div>
                               <div className="flex items-center space-x-2.5">
                                 <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold ${isSelected ? 'bg-white text-indigo-700':'bg-slate-100 text-slate-600'}`}>
-                                  {per.name.split(' ').map(n=>n[0]).join('')}
+                                  <Users className="w-3.5 h-3.5" />
                                 </div>
                                 <h4 className={`text-xs font-bold truncate ${isSelected ? 'text-white' : 'text-slate-900'} font-display`}>{per.name}</h4>
                               </div>
-                              <p className={`text-[10px] mt-1 truncate ${isSelected ? 'text-indigo-100' : 'text-slate-400'} font-bold`}>{per.title}</p>
                             </div>
-                            <p className={`text-[10px] font-mono italic mt-3 border-t pt-2 max-h-12 overflow-hidden truncate ${isSelected ? 'border-white/10 text-indigo-150' : 'border-slate-100 text-slate-500'}`}>
-                              "{per.prompt}"
-                            </p>
                           </button>
                         );
                       })}
@@ -806,12 +712,12 @@ export default function App() {
                         {/* Selected info header */}
                         <div className="bg-slate-100 border border-slate-200/80 rounded-2xl p-5 mb-5 flex flex-col sm:flex-row items-baseline sm:items-center justify-between gap-4">
                           <div>
-                            <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-widest block">Active Long-Tail Query</span>
+                            <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-widest block">Prompt</span>
                             <p className="mt-1 text-md font-bold text-indigo-700 italic font-mono leading-snug">
                               "{activeAudit.prompt}"
                             </p>
                             <span className="text-[10px] text-slate-500 mt-1 block font-semibold">
-                              Synthesized for: <strong>{activePersona.name} ({activePersona.title})</strong>
+                              Synthesized for: <strong>{activePersona.name}</strong>
                             </span>
                           </div>
                         </div>
@@ -825,8 +731,7 @@ export default function App() {
                               
                               {/* Engine Tab Header */}
                               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
-                                <span className="font-bold text-sm text-indigo-600 block font-display">Google Search (Gemini SGE)</span>
-                                <span className="text-[10px] font-mono px-2 py-0.5 bg-slate-100 rounded-md font-extrabold uppercase text-slate-500 border border-slate-200">Grounded SGE</span>
+                                <span className="font-bold text-sm text-indigo-600 block font-display">Gemini</span>
                               </div>
 
                               {/* Visibility Metrics */}
@@ -900,8 +805,7 @@ export default function App() {
                               
                               {/* Engine Tab Header */}
                               <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
-                                <span className="font-bold text-sm text-emerald-600 block font-display">OpenAI Search (ChatGPT GPTs)</span>
-                                <span className="text-[10px] font-mono px-2 py-0.5 bg-slate-100 rounded-md font-extrabold uppercase text-slate-500 border border-slate-200">GPT Search</span>
+                                <span className="font-bold text-sm text-emerald-600 block font-display">ChatGPT</span>
                               </div>
 
                               {/* Visibility Metrics */}
@@ -1003,15 +907,11 @@ export default function App() {
                             <div>
                               <div className="flex items-center space-x-2.5">
                                 <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold ${isSelected ? 'bg-white text-indigo-700':'bg-slate-100 text-slate-600'}`}>
-                                  {per.name.split(' ').map(n=>n[0]).join('')}
+                                  <Users className="w-3.5 h-3.5" />
                                 </div>
                                 <h4 className={`text-xs font-bold truncate ${isSelected ? 'text-white' : 'text-slate-900'} font-display`}>{per.name}</h4>
                               </div>
-                              <p className={`text-[10px] mt-1 truncate ${isSelected ? 'text-indigo-100' : 'text-slate-400'} font-bold`}>{per.title}</p>
                             </div>
-                            <p className={`text-[10px] font-mono italic mt-3 border-t pt-2 max-h-12 overflow-hidden truncate ${isSelected ? 'border-white/10 text-indigo-150' : 'border-slate-100 text-slate-500'}`}>
-                              "{per.prompt}"
-                            </p>
                           </button>
                         );
                       })}
@@ -1022,71 +922,20 @@ export default function App() {
                   <div className="lg:col-span-3 space-y-6">
                     {activeAudit && activePersona ? (
                       activeAudit.eeatContent ? (
-                        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm overflow-hidden space-y-6">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm overflow-hidden space-y-4">
                           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
                             <div>
-                              <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-700 border border-emerald-500/10 text-[10px] font-bold uppercase tracking-wider mb-1.5">
-                                <Award className="w-3.5 h-3.5" />
-                                <span>Google E-E-A-T Content Blueprint</span>
-                              </div>
                               <h3 className="text-lg font-bold text-slate-900 font-display">
-                                Search Visibility Remediation Guide
+                                Generated Blog Article
                               </h3>
                               <p className="text-xs text-slate-500 font-medium">
-                                Remedial strategies and pre-written copy using Experience, Expertise, Authoritativeness, and Trustworthiness guidelines to secure LLM mentions.
+                                Pre-written content optimized for search and LLM mentions tailored to this target persona.
                               </p>
                             </div>
                             
-                            <div className="px-3.5 py-1.5 bg-amber-50 rounded-xl border border-amber-200 flex items-center space-x-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-                              <span className="text-[11px] font-bold text-amber-700 font-mono">EEAT Content Active</span>
-                            </div>
-                          </div>
-
-                          {/* Strategy details breakdown */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {/* Experience */}
-                            <div className="p-4 rounded-xl border border-amber-100 bg-amber-500/[0.02]">
-                              <div className="flex items-center space-x-2 mb-2">
-                                <span className="w-5 h-5 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xs font-mono">E</span>
-                                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide font-display">Experience</h4>
-                              </div>
-                              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                                {activeAudit.eeatContent.experienceSection}
-                              </p>
-                            </div>
-
-                            {/* Expertise */}
-                            <div className="p-4 rounded-xl border border-indigo-100 bg-indigo-500/[0.02]">
-                              <div className="flex items-center space-x-2 mb-2">
-                                <span className="w-5 h-5 rounded-full bg-indigo-500/10 text-indigo-700 flex items-center justify-center font-bold text-xs font-mono">E</span>
-                                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide font-display">Expertise</h4>
-                              </div>
-                              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                                {activeAudit.eeatContent.expertiseSection}
-                              </p>
-                            </div>
-
-                            {/* Authoritativeness */}
-                            <div className="p-4 rounded-xl border border-teal-100 bg-teal-500/[0.02]">
-                              <div className="flex items-center space-x-2 mb-2">
-                                <span className="w-5 h-5 rounded-full bg-teal-500/10 text-teal-700 flex items-center justify-center font-bold text-xs font-mono">A</span>
-                                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide font-display">Authority</h4>
-                              </div>
-                              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                                {activeAudit.eeatContent.authoritySection}
-                              </p>
-                            </div>
-
-                            {/* Trustworthiness */}
-                            <div className="p-4 rounded-xl border border-rose-100 bg-rose-500/[0.02]">
-                              <div className="flex items-center space-x-2 mb-2">
-                                <span className="w-5 h-5 rounded-full bg-rose-500/10 text-rose-700 flex items-center justify-center font-bold text-xs font-mono">T</span>
-                                <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide font-display">Trust</h4>
-                              </div>
-                              <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                                {activeAudit.eeatContent.trustSection}
-                              </p>
+                            <div className="px-3 py-1 bg-indigo-50 rounded-lg border border-indigo-100 flex items-center space-x-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                              <span className="text-[11px] font-bold text-indigo-700 font-mono">Blog Ready</span>
                             </div>
                           </div>
 
@@ -1094,9 +943,9 @@ export default function App() {
                           <div className="border border-slate-200/80 rounded-xl p-5 bg-slate-50 relative overflow-hidden">
                             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 border-b border-slate-200/60 pb-3 gap-2">
                               <div>
-                                <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest block font-mono">Suggested Format: {activeAudit.eeatContent.formatType}</span>
+                                <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest block font-mono">Format: {activeAudit.eeatContent.formatType}</span>
                                 <h4 className="text-xs font-bold text-slate-800 font-display mt-0.5">
-                                  Suggested SEO Title: <span className="text-indigo-600">"{activeAudit.eeatContent.suggestedTitle}"</span>
+                                  SEO Title: <span className="text-indigo-600">"{activeAudit.eeatContent.suggestedTitle}"</span>
                                 </h4>
                               </div>
 
@@ -1107,12 +956,12 @@ export default function App() {
                                 {copiedTextId === activeAudit.personaId ? (
                                   <>
                                     <Check className="w-3.5 h-3.5" />
-                                    <span>Copied Draft!</span>
+                                    <span>Copied blog!</span>
                                   </>
                                 ) : (
                                   <>
                                     <FileText className="w-3.5 h-3.5" />
-                                    <span>Copy Draft Copy</span>
+                                    <span>Copy blog</span>
                                   </>
                                 )}
                               </button>
@@ -1124,7 +973,7 @@ export default function App() {
                             </div>
                             
                             <p className="text-[10px] text-slate-400 mt-2.5 font-medium leading-relaxed font-semibold">
-                              💡 <strong>Implementation Tip:</strong> Copy &amp; paste this structured draft directly onto your website index, blog center, or FAQ section. Google SGE crawlers explicitly index clear, answers-first formatting that incorporates first-person testing, deep expert credentials, and high-quality references.
+                              💡 <strong>Implementation Tip:</strong> Copy &amp; paste this structured blog onto your website index, blog center, or FAQ section to secure LLM mentions.
                             </p>
                           </div>
                         </div>
