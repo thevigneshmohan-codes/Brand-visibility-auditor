@@ -59,6 +59,9 @@ They do not answer critical questions such as:
 * How does my visibility vary across different AI platforms?
 
 ---
+## Why now?
+
+Consumer discovery is shifting from traditional search engines to AI assistants such as ChatGPT and Gemini. Brands need a way to understand whether they are visible in AI-generated recommendations and how they compare against competitors.
 
 ## Customer
 
@@ -130,3 +133,14 @@ Brand Visibility Auditor will evolve from a visibility measurement tool into a c
 * Monitor performance over time
 
 across all major AI-powered search experiences.
+
+---
+
+## Product success metrics
+
+* Number of reports generated
+* Report completion rate
+* Visibility score improvement over time
+* Number of recommendations implemented
+* Prompt coverage across personas
+
