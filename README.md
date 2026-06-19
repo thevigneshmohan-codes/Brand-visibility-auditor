@@ -1,20 +1,108 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Brand Visibility Auditor
 
-# Run and deploy your AI Studio app
+## Prototype
 
-This contains everything you need to run your app locally.
+https://brand-visibility-auditor-130087021073.asia-southeast1.run.app
 
-View your app in AI Studio: https://ai.studio/apps/e03d60a7-9494-42af-9c2a-45fcd3f43285
+---
 
-## Run Locally
+## Overview
 
-**Prerequisites:**  Node.js
+Brand Visibility Auditor helps brands understand how visible they are across AI-powered search experiences such as ChatGPT, Gemini, and other Large Language Models (LLMs).
+
+Consumer search behavior is evolving. Increasingly, users leverage AI assistants during the discovery phase to find products, services, and recommendations, while relying on traditional search engines during evaluation and transaction stages. As AI-generated answers become a primary source of brand discovery, organizations need new ways to measure and improve their visibility within these platforms.
+
+Brand Visibility Auditor helps brands understand how frequently they appear in AI-generated responses and how they compare against competitors across leading LLMs.
+
+---
+
+## Vision
+
+Enable brands to measure, monitor, and improve their visibility across AI-powered search experiences.
+
+---
+
+## Problem
+
+Traditional SEO tools measure rankings on search engines such as Google.
+
+They do not answer critical questions such as:
+
+* Is my brand appearing in ChatGPT recommendations?
+* How often am I mentioned versus competitors?
+* Which prompts trigger my brand's visibility?
+* Which content gaps are hurting my AI search presence?
+* How does my visibility vary across different AI platforms?
+
+---
+
+## Customer
+
+* Chief Marketing Officer (CMO)
+* VP Marketing
+* Head of Digital Marketing
+
+## User
+
+* Digital Marketing Manager
+* Content Strategist
+* Marketing Agencies
+
+---
+
+## Product Roadmap (not listed as per priority)
+
+### MVP (Current)
+
+* Landing page with website URL submission
+* Persona generation
+* Prompt generation
+* Visibility scoring logic
+* Simulated LLM visibility analysis
+  * ChatGPT
+  * Gemini
+* EEAT-based content generation
+* New audit generation
+
+### V1
+
+* Integrate DataForSEO AI Search APIs
+* Real ChatGPT visibility tracking
+* Real Gemini visibility tracking
+* Prompt-level analytics
+* Persona-level analytics
+
+### V2
+
+* Perplexity visibility tracking
+* Prompt-based content generation
+* Visibility trend analysis
+* Historical performance tracking
+* Download report as PDF
+
+### V3
+
+* AI-powered tactical recommendations
+* Payment integration
+* WordPress plugin for direct content publishing
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### V4
+
+* AI-generated images for content creation
+* Automated optimization workflows
+* Multi-location visibility monitoring
+
+---
+
+## Future Vision
+
+Brand Visibility Auditor will evolve from a visibility measurement tool into a complete AI Search Optimization platform that helps brands:
+
+* Measure visibility
+* Identify opportunities
+* Generate content
+* Implement recommendations
+* Monitor performance over time
+
+across all major AI-powered search experiences.
